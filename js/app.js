@@ -20,7 +20,7 @@ const displayPhone = (phones) => {
                <img src = "${phone.image}" class = "img-thumnail" alt = "..">
                <div class = "card-body">
                     <h3 class = "card-title">Name: ${phone.phone_name}<h3> 
-                    <h5 class = "card-text text-dark" > Brand: ${phone.brand}</h5> 
+                    <h5 class = "card-text">Brand: ${phone.brand}</h5> 
                     <button onclick = "phoneDetails('${phone.slug}')"
                     class = "btn btn-primary px-4 py-2">Details</button> 
                </div> 
@@ -30,5 +30,9 @@ const displayPhone = (phones) => {
     });
 }
 const phoneDetails = (details) => {
-    console.log(details)
+    // console.log(details)
+    const url = ` https://openapi.programming-hero.com/api/phone/${details}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data.data.mainFeatures))
 }
