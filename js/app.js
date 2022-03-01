@@ -32,14 +32,13 @@ const displayPhone = (phones) => {
         div.classList.add("col-sm-12")
         div.classList.add("my-4")
         div.innerHTML = `
-           <div class = "card px-3 py-3" style = "width: 25rem;">
-               <img src = "${phone.image}" class = "img-thumnail" alt = "..">
-               <div class = "card-body">
-                    <h3 class = "card-title">Name: ${phone.phone_name}<h3> 
-                    <h5 class = "card-text">Brand: ${phone.brand}</h5> 
-                    <button onclick = "phoneDetails('${phone.slug}')"
-                    class = "btn btn-primary px-4 py-2">Details</button> 
-               </div> 
+            <div class = "card p-3" style = "width: 25rem;" =>
+                    <img src = "${phone.image}" class = "img-thumnail" alt = ".." >
+                    <div class = "card-body" >
+                        <h3 class = "card-title" > Name: ${phone.phone_name} </h3>
+                        <h5 class = "card-text" > Brand: ${phone.brand} </h5>  
+                        <button onclick = "phoneDetails('${phone.slug}')" class = "btn btn-primary px-4 py-2"> Details </button>  
+                    </div>  
             </div>
         `
         phoneArea.appendChild(div)
@@ -56,9 +55,8 @@ const phoneDetails = (slugId) => {
 const displayDetails = (details) => {
     console.log(details)
     const detailsContainer = document.getElementById("details-container")
+    detailsContainer.textContent = ""
     const div = document.createElement('div')
-    div.classList.add("col-lg-4")
-    div.classList.add("col-sm-12")
     div.classList.add("my-4")
     div.innerHTML = `
              <img src = "${details.image}"
@@ -66,12 +64,12 @@ const displayDetails = (details) => {
              alt = "..">
             <h2 class = "my-2"> ${details.name} </h2>
             <h3>${details.releaseDate}</h3>
-            <h4 class = "my-2">MainFeatures: </h4>
+            <h3 class = "my-2">MainFeatures: </h3>
             <ul class = "my-2">
-                <li>ChipSet:  ${details.mainFeatures.chipSet}</li>
-                <li>DisplaySize:  ${details.mainFeatures.displaySize}</li>
-                <li>Memory:  ${details.mainFeatures.memory}</li>
-                <li>Storage: ${details.mainFeatures.storage}</li>
+                <li><span class="h6">ChipSet:</span>  ${details.mainFeatures.chipSet}</li>
+                <li><span class ="h6">DisplaySize:</span>  ${details.mainFeatures.displaySize}</li>
+                <li><span class ="h6">Memory:</span>  ${details.mainFeatures.memory}</li>
+                <li><span class ="h6">Storage:</span> ${details.mainFeatures.storage}</li>
                 <h4 class = "my-2"> Sensors: </h4>
                 <ul>
                     <li> ${details.mainFeatures.sensors[0]}</li> 
@@ -83,14 +81,14 @@ const displayDetails = (details) => {
                     <li> ${details.mainFeatures.sensors[6]} </li> 
                 </ul>
             </ul>
-            <h4 class = "my-2" > Others: </h4>
+            <h3 class = "my-2" > Others: </h3>
             <ul>
-                <li>Bluetooth: ${details.others.Bluetooth} </li> 
-                <li>GPS: ${details.others.GPS} </li> 
-                <li>NFC: ${details.others.NFC} </li>
-                <li>Radio: ${details.others.Radio} </li> 
-                <li>USB: ${details.others.USB} </li> 
-                <li>WLAN: ${details.others.WLAN} </li>
+                <li><span class ="h6">Bluetooth:</span> ${details.others.Bluetooth} </li> 
+                <li><span class ="h6">GPS:</span> ${details.others.GPS} </li> 
+                <li><span class ="h6">NFC:</span> ${details.others.NFC} </li>
+                <li><span class ="h6">Radio:</span> ${details.others.Radio} </li> 
+                <li><span class ="h6">USB:</span> ${details.others.USB} </li> 
+                <li><span class ="h6">WLAN:</span> ${details.others.WLAN} </li>
             </ul> 
     `
     detailsContainer.appendChild(div)
