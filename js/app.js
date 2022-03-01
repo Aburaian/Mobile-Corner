@@ -31,7 +31,7 @@ const displayPhone = (phones) => {
         div.classList.add("col-sm-12")
         div.classList.add("my-4")
         div.innerHTML = `
-            <div class = "card p-3" style = "width: 25rem;" =>
+            <div class = "card p-3" style = "width: 20rem;" =>
                     <img src = "${phone.image}" class = "img-thumnail" alt = ".." >
                     <div class = "card-body" >
                         <h3 class = "card-title" > Name: ${phone.phone_name} </h3>
@@ -59,7 +59,7 @@ const displayDetails = (details) => {
     div.innerHTML = `
              <img src = "${details.image}"
              class = "img-thumnail"
-             alt = "..">
+             alt = "">
             <h2 class = "my-2"> ${details.name} </h2>
             <h3>${details.releaseDate ? details.releaseDate:"No Release Date Found"}</h3>
             <h3 class = "my-2">MainFeatures: </h3>
