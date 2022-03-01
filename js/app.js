@@ -11,7 +11,6 @@ const searchButton = () => {
         .then((data) => {
             if (data.data == 0 || searchPhone == "") {
                 error.innerText = "No Phone Found"
-                phoneArea.innerText = ""
 
             } else {
                 displayPhone(data.data)
@@ -53,7 +52,6 @@ const phoneDetails = (slugId) => {
 }
 // display phone details
 const displayDetails = (details) => {
-    console.log(details)
     const detailsContainer = document.getElementById("details-container")
     detailsContainer.textContent = ""
     const div = document.createElement('div')
