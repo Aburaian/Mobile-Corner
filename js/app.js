@@ -52,10 +52,16 @@ const phoneDetails = (slugId) => {
 }
 // display phone details
 const displayDetails = (details) => {
+    console.log(details)
     const detailsContainer = document.getElementById("details-container")
     detailsContainer.textContent = ""
     const div = document.createElement('div')
     div.classList.add("my-4")
+    div.classList.add("border")
+    div.classList.add("border-3")
+    div.classList.add("border-primary")
+    div.classList.add("rounded")
+    div.classList.add("p-4")
     div.innerHTML = `
              <img src = "${details.image}"
              class = "img-thumnail"
@@ -88,12 +94,12 @@ const displayDetails = (details) => {
                 <p class="d-inline"> ${details.mainFeatures.sensors[15] ? details.mainFeatures.sensors[15]:"" }</p>
             <h3 class = "my-2" > Others: </h3>
             <ul>
-                <li><span class ="h6">Bluetooth:</span> ${details.others.Bluetooth} </li> 
-                <li><span class ="h6">GPS:</span> ${details.others.GPS} </li> 
-                <li><span class ="h6">NFC:</span> ${details.others.NFC} </li>
-                <li><span class ="h6">Radio:</span> ${details.others.Radio} </li> 
-                <li><span class ="h6">USB:</span> ${details.others.USB} </li> 
-                <li><span class ="h6">WLAN:</span> ${details.others.WLAN} </li>
+                <li><span class ="h6">Bluetooth:</span> ${details.others?.Bluetooth ? details.others?.Bluetooth: "not available"} </li> 
+                <li> <span class = "h6"> GPS: </span> ${details.others?.GPS ? details.others?.GPS: "not available"} </li >
+                <li> <span class = "h6"> NFC: </span> ${details.others?.NFC ? details.others?.NFC: "not available"} </li >
+                <li><span class ="h6">Radio:</span> ${details.others?.Radio ? details.others?.Radio: "not available"} </li> 
+                <li><span class ="h6">USB:</span> ${details.others?.USB ? details.others?.USB: "not available"} </li> 
+                <li><span class ="h6">WLAN:</span> ${details.others?.WLAN ? details.others?.WLAN: "not available"} </li>
             </ul> 
     `
     detailsContainer.appendChild(div)
