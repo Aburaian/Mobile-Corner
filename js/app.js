@@ -1,3 +1,4 @@
+// search phone
 const searchButton = () => {
     document.getElementById("phone-area").innerHTML = ""
     document.getElementById("details-container").innerHTML = ""
@@ -8,7 +9,6 @@ const searchButton = () => {
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data.data == null);
             if (data.data == 0 || searchPhone == "") {
                 error.innerText = "No Phone Found"
                 phoneArea.innerText = ""
@@ -21,12 +21,12 @@ const searchButton = () => {
         })
 
 }
+// display phone
 const displayPhone = (phones) => {
     const phoneData20 = phones.slice(0, 20)
     const phoneArea = document.getElementById("phone-area")
     phoneArea.textContent = ""
     phoneData20.forEach(phone => {
-        console.log(phone)
         const div = document.createElement("div")
         div.classList.add("col-lg-4")
         div.classList.add("col-sm-12")
@@ -44,14 +44,14 @@ const displayPhone = (phones) => {
         phoneArea.appendChild(div)
     });
 }
+// phone details
 const phoneDetails = (slugId) => {
-    // console.log(details)
     const url = ` https://openapi.programming-hero.com/api/phone/${slugId}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayDetails(data.data))
 }
-
+// display phone details
 const displayDetails = (details) => {
     console.log(details)
     const detailsContainer = document.getElementById("details-container")
@@ -88,8 +88,6 @@ const displayDetails = (details) => {
                 <p class="d-inline"> ${details.mainFeatures.sensors[13] ? details.mainFeatures.sensors[13]:"" }</p> 
                 <p class="d-inline"> ${details.mainFeatures.sensors[14] ? details.mainFeatures.sensors[14]:"" }</p> 
                 <p class="d-inline"> ${details.mainFeatures.sensors[15] ? details.mainFeatures.sensors[15]:"" }</p>
-
-
             <h3 class = "my-2" > Others: </h3>
             <ul>
                 <li><span class ="h6">Bluetooth:</span> ${details.others.Bluetooth} </li> 
