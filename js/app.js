@@ -63,24 +63,33 @@ const displayDetails = (details) => {
              class = "img-thumnail"
              alt = "..">
             <h2 class = "my-2"> ${details.name} </h2>
-            <h3>${details.releaseDate}</h3>
+            <h3>${details.releaseDate ? details.releaseDate:"No Release Date Found"}</h3>
             <h3 class = "my-2">MainFeatures: </h3>
-            <ul class = "my-2">
+            <ul>
                 <li><span class="h6">ChipSet:</span>  ${details.mainFeatures.chipSet}</li>
                 <li><span class ="h6">DisplaySize:</span>  ${details.mainFeatures.displaySize}</li>
                 <li><span class ="h6">Memory:</span>  ${details.mainFeatures.memory}</li>
                 <li><span class ="h6">Storage:</span> ${details.mainFeatures.storage}</li>
-                <h4 class = "my-2"> Sensors: </h4>
-                <ul>
-                    <li> ${details.mainFeatures.sensors[0]}</li> 
-                    <li> ${details.mainFeatures.sensors[1]} </li> 
-                    <li> ${details.mainFeatures.sensors[2]} </li>
-                    <li> ${details.mainFeatures.sensors[3]} </li> 
-                    <li> ${details.mainFeatures.sensors[4]} </li> 
-                    <li> ${details.mainFeatures.sensors[5]} </li> 
-                    <li> ${details.mainFeatures.sensors[6]} </li> 
-                </ul>
             </ul>
+                <h4 class = "my-2"> Sensors: </h4>
+                <p class= "d-inline me-2"> ${details.mainFeatures.sensors[0] ? details.mainFeatures.sensors[0]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[1] ? details.mainFeatures.sensors[1]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[2] ? details.mainFeatures.sensors[2]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[3] ? details.mainFeatures.sensors[3]:"" }</p>
+                <p class="d-inline"> ${details.mainFeatures.sensors[4] ? details.mainFeatures.sensors[4]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[5] ? details.mainFeatures.sensors[5]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[6] ? details.mainFeatures.sensors[6]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[7] ? details.mainFeatures.sensors[7]:"" }</p>
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[8] ? details.mainFeatures.sensors[8]:"" }</p> 
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[9] ? details.mainFeatures.sensors[9]:"" }</p> 
+                <p class="d-inline me-2"> ${details.mainFeatures.sensors[10] ? details.mainFeatures.sensors[10]:"" }</p> 
+                <p class="d-inline"> ${details.mainFeatures.sensors[11] ? details.mainFeatures.sensors[11]:"" }</p> 
+                <p class="d-inline"> ${details.mainFeatures.sensors[12] ? details.mainFeatures.sensors[12]:"" }</p> 
+                <p class="d-inline"> ${details.mainFeatures.sensors[13] ? details.mainFeatures.sensors[13]:"" }</p> 
+                <p class="d-inline"> ${details.mainFeatures.sensors[14] ? details.mainFeatures.sensors[14]:"" }</p> 
+                <p class="d-inline"> ${details.mainFeatures.sensors[15] ? details.mainFeatures.sensors[15]:"" }</p>
+
+
             <h3 class = "my-2" > Others: </h3>
             <ul>
                 <li><span class ="h6">Bluetooth:</span> ${details.others.Bluetooth} </li> 
