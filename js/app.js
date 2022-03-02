@@ -52,7 +52,6 @@ const phoneDetails = (slugId) => {
 }
 // display phone details
 const displayDetails = (details) => {
-    console.log(details)
     const detailsContainer = document.getElementById("details-container")
     detailsContainer.textContent = ""
     const div = document.createElement('div')
@@ -62,9 +61,9 @@ const displayDetails = (details) => {
     div.classList.add("rounded")
     div.classList.add("p-5")
     div.innerHTML = `
-             <img src = "${details.image}"
-             class = "img-thumnail"
-             alt = "">
+            <img src = "${details.image}"
+            class = "img-thumnail"
+            alt = "">
             <h2 class = "my-2"> ${details.name} </h2>
             <h3>${details.releaseDate ? details.releaseDate:"No Release Date Found"}</h3>
             <h3 class = "my-2">MainFeatures: </h3>
