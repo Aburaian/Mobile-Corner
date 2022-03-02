@@ -57,11 +57,10 @@ const displayDetails = (details) => {
     detailsContainer.textContent = ""
     const div = document.createElement('div')
     div.classList.add("my-4")
-    div.classList.add("border")
-    div.classList.add("border-3")
-    div.classList.add("border-primary")
+    div.classList.add("shadow")
+    div.classList.add("bg-light")
     div.classList.add("rounded")
-    div.classList.add("p-4")
+    div.classList.add("p-5")
     div.innerHTML = `
              <img src = "${details.image}"
              class = "img-thumnail"
